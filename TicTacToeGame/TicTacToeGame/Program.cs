@@ -11,12 +11,15 @@ namespace TicTacToeGame
         static int player = 1; //By default player 1 is set  
 
         static int choice; //This holds the choice at which position user want to mark   
+        // The flag veriable checks who has won if it's value is 1 then some one has won the match if -1 then Match has Draw if 0 then match is still running  
 
+        static int flag = 0; // if game is running 
 
         static void Main(string[] args)
         {
 
-
+            do {
+                Console.Clear();// for clearing borad
             Console.WriteLine("Player1:X and Player2:O");
 
             Console.WriteLine("\n");
@@ -36,6 +39,7 @@ namespace TicTacToeGame
                 Console.WriteLine("Player 1 Chance");
 
             }
+
 
             Console.WriteLine("\n");
             Board();
@@ -74,7 +78,36 @@ namespace TicTacToeGame
 
                 Console.WriteLine("\n");
             }
+                flag = CheckWin();// calling of check win  
+
+            } while (flag != 1 && flag != -1);// This loof will be run until all cell of the grid is not marked with X and O or some player is not win  
+
+
+
+            Console.Clear();
+
+            Board();// getting filled board again  
+
+
+
+            if (flag == 1)// if flag value is 1 then some one has win or means who played marked last time which has win  
+
+            {
+
+                Console.WriteLine("Player {0} has won", (player % 2) + 1);
+
             }
+
+            else// if flag value is -1 the match will be draw and no one is winner  
+
+            {
+
+                Console.WriteLine("Draw");
+
+            }
+
+            Console.ReadLine();
+        }
 
         // create board method
         private static void Board()
