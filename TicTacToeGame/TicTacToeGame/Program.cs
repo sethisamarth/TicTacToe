@@ -12,10 +12,35 @@ namespace TicTacToeGame
 
         static int choice; //This holds the choice at which position user want to mark   
 
-        
+
         static void Main(string[] args)
         {
-            Board();
+           
+
+                Console.WriteLine("Player1:X and Player2:O");
+
+                Console.WriteLine("\n");
+
+                if (player % 2 == 0)//checking the chance of the player  
+
+                {
+
+                    Console.WriteLine("Player 2 Chance");
+
+                }
+
+                else
+
+                {
+
+                    Console.WriteLine("Player 1 Chance");
+
+                }
+
+                Console.WriteLine("\n");
+                Board();
+            
+            
         }
 
         // create board method
