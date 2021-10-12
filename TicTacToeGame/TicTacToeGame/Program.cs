@@ -39,8 +39,8 @@ namespace TicTacToeGame
 
                 Console.WriteLine("\n");
                 Board();
-            
-            
+            choice = int.Parse(Console.ReadLine());//Taking users choice
+
         }
 
         // create board method
